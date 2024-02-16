@@ -14,6 +14,7 @@ import firebase_admin
 from firebase_admin import credentials
 from firebase_admin import auth
 from firebase_admin import firestore
+from .models import Post
 
 cred = credentials.Certificate('wish-9c75f-firebase-adminsdk-mq06b-11c16e74b7.json')
 default_app = firebase_admin.initialize_app(cred)
@@ -25,3 +26,13 @@ def get_user(uid: str):
         return user
     except Exception as e:
         return str(e)
+    
+def create_post(uid: str, post: Post):
+    try:
+        db = firestore.client()
+        doc_ref = db.collection('posts').document()
+        doc_ref.set(post)
+        return doc_ref.id
+    except Exception as e:
+        return str(e)
+    

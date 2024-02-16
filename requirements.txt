@@ -1,3 +1,5 @@
 yagmail
 flask
 firebase-admin
+pydantic
+flask-pydantic

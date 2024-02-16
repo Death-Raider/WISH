@@ -11,6 +11,7 @@ The list of routes this files needs to handle are as follows:
 
 
 from flask import Flask, request, jsonify
+from .server import get_user, create_post
 
 app = Flask(__name__)
 
@@ -42,6 +43,24 @@ def profiles():
 
     # do something with request
     request_json = request.get_json()
+    return True
+
+@app.route("/create_post", methods=["POST"])
+def create_post():
+    """Handles POST requests for creating a post
+
+    Returns:
+        A JSON response containing information.
+    """
+
+    if not request.is_json:
+        return jsonify({"error": "Request must be JSON"}), 400
+
+    # do something with request
+    request_json = request.get_json()
+
+
+
     return True
 
 if __name__ == "__main__":
