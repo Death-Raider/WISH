@@ -1,6 +1,2 @@
 api/.env
-api/__pycache__/*.pyc
-api/__pycache__/__init__.cpython-312.pyc
-api/__pycache__/models.cpython-312.pyc
-api/__pycache__/server.cpython-312.pyc
-api/__pycache__/tests.cpython-312-pytest-7.3.2.pyc
+api/__pycache__/
