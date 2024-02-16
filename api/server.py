@@ -14,7 +14,7 @@ import firebase_admin
 from firebase_admin import credentials
 from firebase_admin import auth
 from firebase_admin import firestore
-from .models import Post
+from models import Post
 
 cred = credentials.Certificate('wish-9c75f-firebase-adminsdk-mq06b-11c16e74b7.json')
 default_app = firebase_admin.initialize_app(cred)

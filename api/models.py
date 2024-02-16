@@ -20,7 +20,7 @@ class User(BaseModel):
 
 class Comment(BaseModel):
     id: int
-    # user: User
+    user: User
     content: str
     post_id: int
 
