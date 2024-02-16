@@ -15,7 +15,7 @@ from flask import Flask, request, jsonify
 app = Flask(__name__)
 
 @app.route("/mail", methods=["POST"])
-def handle_prediction():
+def mail():
     """Handles POST requests for accepting/rejecting the candiate by the instution.
 
     Returns:
@@ -30,7 +30,7 @@ def handle_prediction():
     return True
 
 @app.route("/profiles", methods=["GET"])
-def handle_prediction():
+def profiles():
     """Handles GET requests for user profile
 
     Returns:

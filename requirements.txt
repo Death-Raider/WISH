@@ -1,1 +1,3 @@
 yagmail
+flask
+firebase-admin
