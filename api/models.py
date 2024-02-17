@@ -26,7 +26,7 @@ class Comment(BaseModel):
 
 class Post(BaseModel):
     id: int
-    # uid: User
+    uid: User
     title: str
     content: str
     comments: List[Comment] = []

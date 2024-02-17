@@ -14,20 +14,55 @@ import firebase_admin
 from firebase_admin import credentials
 from firebase_admin import auth
 from firebase_admin import firestore
-from models import Post
+from models import Post, User
 
 cred = credentials.Certificate('wish-9c75f-firebase-adminsdk-mq06b-11c16e74b7.json')
 default_app = firebase_admin.initialize_app(cred)
+db = firestore.client()
 
-
-def get_user(uid: str):
+def create_user(user: User):
     try:
-        user = auth.get_user(uid)
+        user = auth.create_user(
+            uid=user.uid,
+            email=user.email,
+            password=user.password
+        )
+
+        data = {
+            "name": user.name,
+            "pfp": user.pfp,
+            "description": user.description,
+            "USER_TYPE": user.USER_TYPE,
+            "verification": user.verification,
+            "gender": user.gender,
+            "age": user.age,
+            "researcher": user.researcher
+        }
+
+        db.collection('usersCollection').set(user.uid).data(data)
         return user
     except Exception as e:
         return str(e)
+
+def get_user(user: User):
+    try:
+        user = auth.get_user_by_email(user.email)
+        user_data_collection = db.collection('usersCollection')
+        user_data= user_data_collection.document(user.uid).get()
+        data = {
+            "name": user_data.name,
+            "pfp": user_data.pfp,
+            "description": user_data.description,
+            "USER_TYPE": user_data.USER_TYPE,
+            "verification": user_data.verification,
+            "age": user_data.age,
+            "gender": user_data.gender,
+            "researcher": user_data.researcher
+        }
+    except Exception as e:
+        return str(e)
     
-def create_post(uid: str, post: Post):
+def create_post(post: Post):
     try:
         db = firestore.client()
         doc_ref = db.collection('posts').document()
