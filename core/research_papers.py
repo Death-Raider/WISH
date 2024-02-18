@@ -75,5 +75,6 @@ def get_papers_europePubMedCentral():
             break
     return papers
 
-papers1 = get_papers_europePubMedCentral()
-print(papers1)
+if __name__ == "__main__":
+    papers1 = get_papers_europePubMedCentral()
+    print(papers1)

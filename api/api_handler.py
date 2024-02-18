@@ -19,21 +19,14 @@ app = Flask(__name__)
 
 @app.route("/mail", methods=["POST"])
 def mail():
-    """Handles POST requests for accepting/rejecting the candiate by the 
-       instution.
-
-    Returns:
-        A JSON response containing information.
-    """
-
     if not request.is_json:
         return jsonify({"error": "Request must be JSON"}), 400
 
     # do something with request
     request_json = request.get_json()
-    return True
+    return 
 
-@app.route("/profiles", methods=["GET"])
+@app.route("/profile", methods=["GET"])
 def profiles():
     # do something with request
     mail = request.args.get("email")
@@ -56,17 +49,12 @@ def create_user_endp():
         age=data["age"], 
         researcher=data["researcher"]
     )
-    create_user(user)
-    return jsonify({"success": "successfully created user"})
+    userCreated = create_user(user, data["uid"], data["email"], data["password"])
+    print(userCreated)
+    return jsonify({"success": "done"}), 200
 
 @app.route("/create_post", methods=["POST"])
 def create_post():
-    """Handles POST requests for creating a post
-
-    Returns:
-        A JSON response containing information.
-    """
-
     if not request.is_json:
         return jsonify({"error": "Request must be JSON"}), 400
 

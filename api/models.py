@@ -9,6 +9,7 @@ class Researcher(BaseModel):
     objective: str
 
 class User(BaseModel):
+    uid: str
     name: str
     pfp: str
     description: str

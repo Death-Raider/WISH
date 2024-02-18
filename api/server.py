@@ -20,12 +20,12 @@ cred = credentials.Certificate('wish-9c75f-firebase-adminsdk-mq06b-11c16e74b7.js
 default_app = firebase_admin.initialize_app(cred)
 db = firestore.client()
 
-def create_user(user: User):
+def create_user(user: User, uid: str, email: str, password: str):
     try:
-        user = auth.create_user(
-            uid=user.uid,
-            email=user.email,
-            password=user.password
+        userCreated = auth.create_user(
+            uid=uid,
+            email=email,
+            password=password
         )
 
         data = {
@@ -39,15 +39,15 @@ def create_user(user: User):
             "researcher": user.researcher
         }
 
-        db.collection('usersCollection').set(user.uid).data(data)
-        return user
+        db.collection('customUsersCollection').add(data)
+        return userCreated
     except Exception as e:
         return str(e)
 
 def get_user(user: User):
     try:
         user = auth.get_user_by_email(user.email)
-        user_data_collection = db.collection('usersCollection')
+        user_data_collection = db.collection('customUsersCollection')
         user_data= user_data_collection.document(user.uid).get()
         data = {
             "name": user_data.name,
@@ -59,6 +59,7 @@ def get_user(user: User):
             "gender": user_data.gender,
             "researcher": user_data.researcher
         }
+        return data
     except Exception as e:
         return str(e)
     
