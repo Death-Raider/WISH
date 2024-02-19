@@ -39,27 +39,29 @@ def create_user(user: User, uid: str, email: str, password: str):
             "researcher": user.researcher
         }
 
-        db.collection('customUsersCollection').add(data)
+        db.collection('customUsersCollection').document(uid).set(data)
         return userCreated
     except Exception as e:
         return str(e)
 
-def get_user(user: User):
+def get_user(mail: str):
     try:
-        user = auth.get_user_by_email(user.email)
+        user = auth.get_user_by_email(mail)
         user_data_collection = db.collection('customUsersCollection')
-        user_data= user_data_collection.document(user.uid).get()
-        data = {
-            "name": user_data.name,
-            "pfp": user_data.pfp,
-            "description": user_data.description,
-            "USER_TYPE": user_data.USER_TYPE,
-            "verification": user_data.verification,
-            "age": user_data.age,
-            "gender": user_data.gender,
-            "researcher": user_data.researcher
-        }
-        return data
+        user_data= user_data_collection.document(user.uid).get().to_dict()
+        if user_data != None:
+            data = {
+                "name": user_data["name"],
+                "pfp": user_data["pfp"],
+                "description": user_data["description"],
+                "USER_TYPE": user_data["USER_TYPE"],
+                "verification": user_data["verification"],
+                "age": user_data["age"],
+                "gender": user_data["gender"],
+                "researcher": user_data["researcher"]
+            }
+
+            return data
     except Exception as e:
         return str(e)
     
@@ -67,7 +69,7 @@ def create_post(post: Post):
     try:
         db = firestore.client()
         doc_ref = db.collection('posts').document()
-        doc_ref.set(post)
+        doc_ref.set(post.model_dump())
         return doc_ref.id
     except Exception as e:
         return str(e)

@@ -11,7 +11,7 @@ The list of routes this files needs to handle are as follows:
 """
 
 
-from flask import Flask, request, jsonify
+from flask import Flask, json, request, jsonify
 from server import get_user, create_post, create_user
 from models import User, Post
 
@@ -29,9 +29,13 @@ def mail():
 @app.route("/profile", methods=["GET"])
 def profiles():
     # do something with request
+    print("test")
     mail = request.args.get("email")
-    user = get_user(mail)
-    return jsonify(user)
+    if mail != None:
+        user = get_user(mail)
+        return jsonify(user)
+    else:
+        return jsonify({"error": "Arguments weren't provided"}), 400
 
 @app.route("/create_user", methods=["POST"])
 def create_user_endp():

@@ -9,7 +9,6 @@ class Researcher(BaseModel):
     objective: str
 
 class User(BaseModel):
-    uid: str
     name: str
     pfp: str
     description: str
@@ -20,13 +19,11 @@ class User(BaseModel):
     researcher: Researcher | None = None
 
 class Comment(BaseModel):
-    id: int
     user: User
     content: str
     post_id: int
 
 class Post(BaseModel):
-    id: int
     uid: User
     title: str
     content: str
