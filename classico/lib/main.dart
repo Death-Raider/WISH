@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
         MyRoutes.homeRoute: (context) => HomePage(),
         MyRoutes.loginRoute: (context) => LoginPage(),
         MyRoutes.profileRoute: (context) => ProfilePage(),
-        MyRoutes.questionRoute: (context) => QuestionnairePage(),
+        MyRoutes.questionRoute: (context) => Question(),
         MyRoutes.testRoute: (context) => MyHomePage(),
 
       },
