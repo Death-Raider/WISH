@@ -6,7 +6,6 @@ import 'package:classico/pages/question.dart';
 import 'package:classico/pages/test.dart';
 import 'package:classico/utils/routes.dart';
 import "package:flutter/material.dart";
-import 'package:google_fonts/google_fonts.dart';
 void main(){
   runApp(MyApp());
 }

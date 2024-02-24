@@ -4,7 +4,6 @@ import 'package:flutter/services.dart';
 
 import 'package:flutter/cupertino.dart';
 
-import 'package:flutter/cupertino.dart';
 
 class DataTile extends StatelessWidget {
   final Map<String, dynamic> data;
