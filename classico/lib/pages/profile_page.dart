@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:wish/utils/functions.dart';
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({Key? key});
@@ -21,7 +21,7 @@ class ProfilePage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.blueAccent,
+        backgroundColor: Color(0xFFFF585F),
         title: Text("Profile View"),
       ),
       body: SingleChildScrollView(

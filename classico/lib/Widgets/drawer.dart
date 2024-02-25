@@ -1,4 +1,4 @@
-import 'package:classico/utils/routes.dart';
+import 'package:wish/utils/routes.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -17,7 +17,7 @@ class _MyDrawerState extends State<MyDrawer> {
   Widget build(BuildContext context) {
     return Drawer(
       child: Container(
-        color: Colors.blueAccent,
+        color: Colors.purple,
         child: ListView(
           padding: EdgeInsets.zero,
           children: [
@@ -25,7 +25,7 @@ class _MyDrawerState extends State<MyDrawer> {
               padding: EdgeInsets.zero,
               child: UserAccountsDrawerHeader(
                 margin: EdgeInsets.zero,
-                decoration: BoxDecoration(color: Colors.blueAccent),
+                decoration: BoxDecoration(color: Colors.purple),
                 accountName: Text("Shlok Sharma"),
                 accountEmail: Text("shlok@gmail.com"),
                 currentAccountPicture: CircleAvatar(

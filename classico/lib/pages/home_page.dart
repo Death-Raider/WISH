@@ -1,5 +1,5 @@
-import 'package:classico/Widgets/drawer.dart';
-import 'package:classico/pages/test.dart';
+import 'package:wish/Widgets/drawer.dart';
+import 'package:wish/Widgets/papers.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -9,7 +9,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.blueAccent,
+        backgroundColor: Color(0xFFFF585F),
         title: Text("WISH"),
       ),
       body: Column(
@@ -18,9 +18,6 @@ class HomePage extends StatelessWidget {
             padding: EdgeInsets.all(8.0),
             child: Row(
               children: [
-                // Add your logo widget here
-                // Example: Image.asset('assets/logo.png', width: 40, height: 40),
-
                 SizedBox(width: 8.0), // Add some spacing between logo and search bar
 
                 Expanded(
@@ -42,7 +39,7 @@ class HomePage extends StatelessWidget {
             ),
           ),
           Expanded(
-            child: MyHomePage(),
+            child: Papers(),
           ),
         ],
       ),

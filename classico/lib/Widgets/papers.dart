@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-
+import 'package:wish/utils/functions.dart';
 import 'package:flutter/cupertino.dart';
 
 
@@ -17,7 +17,7 @@ class DataTile extends StatelessWidget {
       padding: const EdgeInsets.all(16.0),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(8.0),
-        color: Colors.blueAccent.shade100,
+        color: Colors.pink.shade100,
       ),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -25,7 +25,7 @@ class DataTile extends StatelessWidget {
           Container(
             decoration: BoxDecoration(
               shape: BoxShape.circle,
-              color: Colors.blueAccent,
+              color: Colors.pink,
             ),
             padding: const EdgeInsets.all(8.0),
             child: CupertinoButton(
@@ -77,14 +77,14 @@ class DataTile extends StatelessWidget {
 
 
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key}) : super(key: key);
+class Papers extends StatefulWidget {
+  const Papers({Key? key}) : super(key: key);
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<Papers> createState() => _PapersState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _PapersState extends State<Papers> {
   // Replace 'assets/data.json' with your actual file path
   final String dataFilePath = 'assets/json/dummy.json';
   List<dynamic> data = [];
@@ -113,9 +113,6 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(
-      //   title: const Text('Data Containers'),
-      // ),
       body: data.isEmpty
           ? const Center(child: Text('Loading data...'))
           : ListView.builder(

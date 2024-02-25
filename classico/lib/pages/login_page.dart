@@ -1,4 +1,4 @@
-import 'package:classico/utils/routes.dart';
+import 'package:wish/utils/routes.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatefulWidget {
@@ -11,22 +11,14 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
 
   String name="";
-  bool changeButton=false;
-
+  // bool changeButton=false;
 
   final _formKey = GlobalKey<FormState>();
 
   // Creating method
   moveToHome(BuildContext context) async{
     if(_formKey.currentState!.validate()){
-      setState(() {
-        changeButton=true;
-      });
-      await Future.delayed(Duration(seconds: 1));
       await Navigator.pushNamed(context, MyRoutes.homeRoute);
-      setState(() {
-        changeButton=false;
-      });
     }
   }
 
@@ -50,9 +42,6 @@ class _LoginPageState extends State<LoginPage> {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              // SizedBox(
-              //   height: 20,
-              // ),
               Padding(
                   padding: const EdgeInsets.symmetric(vertical: 16.0, horizontal: 32.0),
                   child: Column(children: [
@@ -93,33 +82,39 @@ class _LoginPageState extends State<LoginPage> {
                       height: 40,
                     ),
 
-                    Material(
-                      color: Colors.deepPurple,
-                      borderRadius: BorderRadius.circular(changeButton?20:8),
-                      child: InkWell(
-                        // splashColor: Colors.red,
-
-                        onTap: () => moveToHome(context),
-                        child: AnimatedContainer(
-                          duration: Duration(seconds: 1),
-                          width: changeButton?50:150,
-                          height: 50,
-                          alignment: Alignment.center,
-                          child: changeButton?Icon(Icons.done,color: Colors.white,):Text(
-                            "Login",
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 18,
-                            ),
-                          ),
-                          // decoration: BoxDecoration(
-                          //   color: Colors.deepPurple,
-                            // shape: changeButton? BoxShape.circle:BoxShape.rectangle,
-                          // ),
-                        ),
-                      ),
-                    ),
+                    ElevatedButton(
+                        onPressed: () => moveToHome(context),
+                        child: Text("Login")
+                    )
+                    // Material(
+                    //   color: Colors.deepPurple,
+                    //   borderRadius: BorderRadius.circular(8),
+                    //  
+                    //   // child: InkWell(
+                    //   //   // splashColor: Colors.red,
+                    //   //
+                    //   //   onTap: () => moveToHome(context),
+                    //   //
+                    //   //   // child: AnimatedContainer(
+                    //   //   //   duration: Duration(seconds: 1),
+                    //   //   //   width: changeButton?50:150,
+                    //   //   //   height: 50,
+                    //   //   //   alignment: Alignment.center,
+                    //   //   //   child: changeButton?Icon(Icons.done,color: Colors.white,):Text(
+                    //   //   //     "Login",
+                    //   //   //     style: TextStyle(
+                    //   //   //       color: Colors.white,
+                    //   //   //       fontWeight: FontWeight.bold,
+                    //   //   //       fontSize: 18,
+                    //   //   //     ),
+                    //   //   //   ),
+                    //   //   //   // decoration: BoxDecoration(
+                    //   //   //   //   color: Colors.deepPurple,
+                    //   //   //     // shape: changeButton? BoxShape.circle:BoxShape.rectangle,
+                    //   //   //   // ),
+                    //   //   // ),
+                    //   // ),
+                    // ),
                   ],)
               )
             ],
