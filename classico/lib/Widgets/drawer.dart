@@ -17,7 +17,7 @@ class _MyDrawerState extends State<MyDrawer> {
   Widget build(BuildContext context) {
     return Drawer(
       child: Container(
-        color: Colors.purple,
+        color: Theme.of(context).colorScheme.primary,
         child: ListView(
           padding: EdgeInsets.zero,
           children: [
@@ -25,7 +25,7 @@ class _MyDrawerState extends State<MyDrawer> {
               padding: EdgeInsets.zero,
               child: UserAccountsDrawerHeader(
                 margin: EdgeInsets.zero,
-                decoration: BoxDecoration(color: Colors.purple),
+                decoration: BoxDecoration(color: Theme.of(context).colorScheme.primary),
                 accountName: Text("Shlok Sharma"),
                 accountEmail: Text("shlok@gmail.com"),
                 currentAccountPicture: CircleAvatar(

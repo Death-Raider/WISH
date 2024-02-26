@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wish/Widgets/drawer.dart';
 
 void main() {
   runApp(const Question());
@@ -36,8 +37,9 @@ class _MyHomePageState extends State<MyPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: MyDrawer(),
       appBar: AppBar(
-        backgroundColor: Colors.pink,
+        backgroundColor: Color(0xFFF4AAC9),
         title: Text(widget.title),
       ),
       body: ListView.builder(
@@ -51,7 +53,10 @@ class _MyHomePageState extends State<MyPage> {
       floatingActionButton: FloatingActionButton(
         onPressed: () => setState(() => questionnaires.add(Questionnaire())),
         tooltip: 'Add Questionnaire',
-        child: const Icon(Icons.add),
+        // backgroundColor: Color(0x4AAC9FF),
+        child: const Icon(
+            Icons.add,
+        ),
       ),
     );
   }

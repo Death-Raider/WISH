@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:wish/utils/functions.dart';
+import 'package:wish/Widgets/drawer.dart';
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({Key? key});
@@ -13,15 +14,16 @@ class ProfilePage extends StatelessWidget {
     final int age = 34;
     final String gender = "Female";
     final String institution = "VIT";
-    final String qualification = "P.H.D";
+    final String qualification = "PhD";
     final String researcherVerification = "Verified";
     final String researchStatus = "Currently under research";
     final String researchSpecialization = "Menstrual Health";
     final String researchObjective = "Health";
 
     return Scaffold(
+      drawer: MyDrawer(),
       appBar: AppBar(
-        backgroundColor: Color(0xFFFF585F),
+        backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
         title: Text("Profile View"),
       ),
       body: SingleChildScrollView(
@@ -31,10 +33,11 @@ class ProfilePage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
+                width: MediaQuery.of(context).size.width,
                 padding: EdgeInsets.all(16.0),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(8.0),
-                  color: Colors.blueAccent.shade100,
+                  color: Theme.of(context).appBarTheme.backgroundColor,
                 ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -81,7 +84,7 @@ class ProfilePage extends StatelessWidget {
                 padding: EdgeInsets.all(16.0),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(8.0),
-                  color: Colors.blueAccent.shade100,
+                  color: Theme.of(context).appBarTheme.backgroundColor,
                 ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -130,34 +133,3 @@ class ProfilePage extends StatelessWidget {
     );
   }
 }
-
-
-
-
-
-
-// import 'package:flutter/material.dart';
-// import 'package:classico/utils/routes.dart';
-// import '../Widgets/drawer.dart';
-//
-// class ProfilePage extends StatelessWidget {
-//   const ProfilePage({super.key});
-//
-//   @override
-//   Widget build(BuildContext context) {
-//     final int days=30;
-//     final String name = "Shlok";
-//
-//     return Scaffold(
-//       appBar: AppBar(
-//         backgroundColor: Colors.blueAccent,
-//         title: Text("Profile View"),
-//       ),
-//       body: Center(
-//         child: Container(
-//           child: Text("Welcome to $days days of flutter by $name"),
-//         ),
-//       ),
-//     );
-//   }
-// }
