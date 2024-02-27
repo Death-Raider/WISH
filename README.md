@@ -10,7 +10,7 @@
 <p align="center"><img src="https://img.shields.io/badge/Build-Vitafile-red?logo=npm" alt="shields"></p>
 <br>
 <h2> 🎥 Demo Video</h2>
-[Link to Video](https://www.youtube.com/watch?v=vbWuN2zDp7A)
+<a href="https://www.youtube.com/watch?v=vbWuN2zDp7A">Watch Our Video On YouTube</a>
 
 <h2>Project: </h2>
 <br>
