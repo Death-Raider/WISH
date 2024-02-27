@@ -10,7 +10,8 @@
 <p align="center"><img src="https://img.shields.io/badge/Build-Vitafile-red?logo=npm" alt="shields"></p>
 <br>
 <h2> 🎥 Demo Video</h2>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/vbWuN2zDp7A?si=deGTUuivrcK6E1Wc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+[![Alt text](https://img.youtube.com/vi/vbWuN2zDp7A/0.jpg)](https://www.youtube.com/watch?v=vbWuN2zDp7A)
+
 <h2>Project: </h2>
 <br>
 <img src="./assets/login.jpeg" width=25%><br>
