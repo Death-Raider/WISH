@@ -1,3 +1,4 @@
 api/.env
 api/__pycache__/
 core/__pycache__
+core/API_KEYS.json

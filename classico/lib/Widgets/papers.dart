@@ -16,7 +16,6 @@ class Papers extends StatefulWidget {
 }
 
 class _PapersState extends State<Papers> {
-  // Replace 'assets/data.json' with your actual file path
   final String dataFilePath = 'assets/json/dummy.json';
   List<dynamic> data = [];
 

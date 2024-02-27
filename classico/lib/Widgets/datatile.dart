@@ -45,7 +45,7 @@ class DataTile extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 Text(
-                  data['Title'],
+                  data['title'],
                   style: const TextStyle(
                     fontSize: 18.0,
                     fontWeight: FontWeight.bold,
@@ -53,14 +53,7 @@ class DataTile extends StatelessWidget {
                 ),
                 const SizedBox(height: 8.0),
                 Text(
-                  data['Description'],
-                  style: const TextStyle(
-                    fontSize: 16.0,
-                  ),
-                ),
-                const SizedBox(height: 8.0),
-                Text(
-                  data['Link'],
+                  data['link'],
                   style: const TextStyle(
                     fontSize: 16.0,
                   ),
