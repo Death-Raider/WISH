@@ -18,7 +18,7 @@
 
 - Login with the credentials used during sign-up.<br>
 
-<img src="./assets/home.jpeg" width=25%><br>
+<img src="./assets/home.png" width=25%><br>
 - Home page highlighting the trending research papers and allows you to search through them<br>
 
 <img src="./assets/sidebar.jpeg" width=25%><br>
