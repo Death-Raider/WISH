@@ -1,10 +1,14 @@
+import 'package:flutter/cupertino.dart';
 import 'package:wish/Widgets/drawer.dart';
 import 'package:wish/Widgets/papers.dart';
+import 'package:wish/classes/user.dart';
 import 'package:flutter/material.dart';
 
-
 class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+  final User userData;
+  HomePage({super.key, required this.userData}){
+    this.userData.displayUser();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -39,25 +43,12 @@ class HomePage extends StatelessWidget {
             padding: EdgeInsets.all(8.0),
             child: Row(
               children: [
-                SizedBox(width: 8.0), // Add some spacing between logo and
-                // search bars
+                SizedBox(width: 8.0), // Add some spacing between logo and search bars
                 Expanded(
-                  child: Container(
-                    decoration: BoxDecoration(
-                      color: Colors.grey[200],
-                      borderRadius: BorderRadius.circular(8.0),
-                    ),
-                    child: TextField(
-                      decoration: InputDecoration(
-                        hintText: 'Search...',
-                        border: InputBorder.none,
-                        prefixIcon: Icon(Icons.search),
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
+                  child: CupertinoSearchTextField()
+                )
+              ]
+            )
           ),
           Expanded(
             child: Papers(),

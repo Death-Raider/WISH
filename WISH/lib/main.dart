@@ -3,7 +3,7 @@ import 'package:wish/pages/login_page.dart';
 import 'package:wish/pages/home_page.dart';
 import 'package:wish/pages/profile_page.dart';
 import 'package:wish/pages/question.dart';
-import 'package:wish/Widgets/papers.dart';
+
 import 'package:wish/utils/routes.dart';
 import "package:flutter/material.dart";
 
@@ -21,11 +21,11 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       initialRoute: MyRoutes.loginRoute,
       routes: {
-        MyRoutes.homeRoute: (context) => HomePage(),
+        // MyRoutes.homeRoute: (context) => HomePage(),
         MyRoutes.loginRoute: (context) => LoginPage(),
-        MyRoutes.profileRoute: (context) => ProfilePage(),
-        MyRoutes.questionRoute: (context) => Question(),
-        MyRoutes.testRoute: (context) => LoginPage(),
+        // MyRoutes.profileRoute: (context) => ProfilePage(),
+        // MyRoutes.questionRoute: (context) => Question(),
+        // MyRoutes.testRoute: (context) => LoginPage(),
 
       },
     );

@@ -1,8 +1,8 @@
 import 'dart:convert';
 
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:chat_appication/models/chat_user.dart';
-import 'package:chat_appication/pages/auth/login_page.dart';
+import 'package:wish/chat_app_files/chat_user.dart';
+import 'package:wish/chat_app_files/login_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 

@@ -6,6 +6,9 @@
       <excludeFolder url="file://$MODULE_DIR$/classico/.dart_tool" />
       <excludeFolder url="file://$MODULE_DIR$/classico/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/classico/build" />
+      <excludeFolder url="file://$MODULE_DIR$/WISH/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/WISH/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/WISH/build" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
