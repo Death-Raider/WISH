@@ -51,6 +51,7 @@ class _LoginPageState extends State<LoginPage> {
               Image.asset("assets/images/wish-logo.png",
                 fit: BoxFit.cover,
               ),
+              // Text("Welcome"),
               Padding(
                   padding: const EdgeInsets.symmetric(vertical: 16.0, horizontal: 32.0),
                   child: Column(children: [

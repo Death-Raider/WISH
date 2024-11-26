@@ -1,1 +1,1 @@
-This directory consists of the functions files which are to be used by other functions and help isolate sections in a single function.
+This directory consists of the functions files which are to be used by other functions and help isolate sections in a single functionwi.
